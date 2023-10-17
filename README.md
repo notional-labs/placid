@@ -5,13 +5,15 @@ mitigations to
 
 ## Notes
 
-[The issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io).  
+[The issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [ICFormal](https://informal.systems/).  
 
 The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent. 
 
+The issue disclosed in Amulet's post is not yet fixed, but there are ways to mitigate it, perhaps fully.
+
 The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted against the direct and clearly expressed wishes of the Notional team.
 
-https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604 is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  However, it is necessary and safest to trend towards disclosure, so here is that plan:
+https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604 is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  
 
 
 
