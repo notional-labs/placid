@@ -6,7 +6,9 @@ mitigations to asa-2023-002, which is part of a larger set of issues reported to
 
 The [issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [ICFormal](https://informal.systems/).  
 
-The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent, but accuracy matters, and that is accurate.  All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, and TerraForm Labs teams.  There is not currently any one-size-fits-all solution.
+The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent, but accuracy matters, and that is accurate.  All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, Injective, Celestia, and TerraForm Labs teams.  
+
+There is not currently any one-size-fits-all solution.
 
 The issue disclosed in Amulet's post is not yet fixed, but there are ways to mitigate it, perhaps fully.
 
