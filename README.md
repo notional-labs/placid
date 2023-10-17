@@ -12,12 +12,13 @@ The issue disclosed in Amulet's post is not yet fixed, but there are ways to mit
 
 The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted against the direct and clearly expressed wishes of the Notional team.
 
-<https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604> is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  
+[asa-2023-002](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  
 
 ## Plan
 
-* release short term mitigations, this repository -- <https://github.com/notional-labs/placid>
+* ~~release short term mitigations, this repository~~
 * assist validators and chain teams with the implementation of mitigations
+  * Jacob, Jehan, Zaki, Marko, Dev, the celesita team, Achilleas from Injective, Notional's engineering team have all been helpful and I am sure they'd be glad to lend a hand with improved configurations & mitigation.
 * work at a pace less than 16 hrs per day to ensure that issues in comet are addressed
 * release solid fixes
 * address procedural issues that caused the interchain foundation to bungle these items since 2021
@@ -26,11 +27,14 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 these are the mitigations that I intend to ship today at 1400 GMT to the public on Amulet’s forum post, via twitter, and via DM/Telegram/Signal to chain teams in Notional’s Network.  That covers most, but not all of Cosmos.
 
+It is important to note that the mitigations will vary somewhat from chain to chain. 
+
 ### Have a block size between 2-5 mb
 
 [2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
 
-* This finding is validated by testing on the cosmos hub replicated securityh testnet.
+* This finding is validated by testing on the cosmos hub replicated security testnet performed by Notional, CryptoCrew, and Hypha.
+* Chains using x/wasm should not reduce block size below 3.1MB
 
 ### Validators should peer directly with one another
 
@@ -51,11 +55,11 @@ these are the mitigations that I intend to ship today at 1400 GMT to the public 
 
 Raising the price of bytes will ensure that exploiting
 
-* <https://forum.cosmos.network/t/last-call-increase-the-size-of-the-memo-field-to-100kb-and-10x-the-cost-of-bytes/11500/11>
+* [Cosmos Hub Example](https://forum.cosmos.network/t/last-call-increase-the-size-of-the-memo-field-to-100kb-and-10x-the-cost-of-bytes/11500/11)
 
 ### Jail validators faster
 
-If validators are jailed more rapidly, there is less opportunity to achieve a full halt. 
+If validators are jailed more rapidly, there is less opportunity to achieve a full halt, and it is more expensive in terms of cost per unit time.
 
 * [adjusting signed blocks window downwards](https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1) 
 * min_signed_blocks_per_window upwards
@@ -64,7 +68,7 @@ If validators are jailed more rapidly, there is less opportunity to achieve a fu
 
 With a smaller downtime window or hgiher min_signed_blocks_per_window, validators are more likely to be jailed.  We should not bother to slash them if this occurs.
 
-* <https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10>
+* [Cosmos Hub Example](https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10)
 
 ### decrease number of transactions the mempool can store
 
