@@ -83,8 +83,9 @@ https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-
 
 ### Beware of Banana King transactions and consider a mempool filter for them until there is an updated IBC release
 
-  * https://x.com/web3_analyst/status/1635687287962112000?s=20
-  * https://github.com/cosmos/ibc-go/issues/4859
+  * [Banana King's Coming Out Party](https://x.com/web3_analyst/status/1635687287962112000?s=20)
+  * [Banana King's Fix](https://github.com/cosmos/ibc-go/issues/4859)
+
 
 ### do not use x/globalfee to for gas bypasses
 
@@ -98,14 +99,11 @@ https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-
 
 ### Validators should enforce a globally consistent gas price using the configuration options for that.
 
-* use governance proposals to globally set a gas price, even if that cannot be enforced the way x/globalfee does, so that validators have a clear picture of what they should set gas prices to, instead of keeping that information unclear as it often is
+* use governance proposals to globally set a gas price, even if that cannot be enforced by x/globalfee, so that validators have a clear picture of what they should set gas prices to, instead of keeping that information unclear as it often is
 
 ### Validators should ensure minimum 1gbps bandwidth and operate from bare metal nvme devices
 
 * In testing on Celestia it was clear that validators with better hardware performed better in testing.  
-
-
-
 
 
 ## Process
@@ -128,10 +126,13 @@ Mitigations and research were worked on by:
   * Lit
 * Cryptocrew
   * Clemens
+* [ctrl_felix](x.com/ctrl_felix)
+* [coldchain](x.com/getcoldy)
 * Iqlusion
   * Zaki
 * Cosmos Hub
   * Jehan
+  * Milan
 * Hypha
   * Lexa
   * Udit
