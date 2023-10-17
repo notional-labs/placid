@@ -6,7 +6,7 @@ mitigations to asa-2023-002, which is part of a larger set of issues reported to
 
 The [issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [ICFormal](https://informal.systems/).  
 
-The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent, but accuracy matters, and that is accurate.  All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, and TerraForm Labs teams.  There is not currently any one-size-fits-all solution. 
+The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent, but accuracy matters, and that is accurate.  All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, and TerraForm Labs teams.  There is not currently any one-size-fits-all solution.
 
 The issue disclosed in Amulet's post is not yet fixed, but there are ways to mitigate it, perhaps fully.
 
@@ -49,23 +49,53 @@ these are the mitigations that I intend to ship today at 1400 GMT to the public 
 
 ### 100 gas per byte
 
-Raising the price of bytes will ensure that exploiting 
+Raising the price of bytes will ensure that exploiting
 
 * <https://forum.cosmos.network/t/last-call-increase-the-size-of-the-memo-field-to-100kb-and-10x-the-cost-of-bytes/11500/11>
 
 ### Jail validators faster
 
-weather by [adjusting signed blocks window downwards](https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1) or min_signed_blocks_per_window upwards
+If validators are jailed more rapidly, there is less opportunity to achieve a full halt. 
+
+* [adjusting signed blocks window downwards](https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1) 
+* min_signed_blocks_per_window upwards
 
 ### lower downtime slash
 
-<https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10>
+With a smaller downtime window or hgiher min_signed_blocks_per_window, validators are more likely to be jailed.  We should not bother to slash them if this occurs.
+
+* <https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10>
 
 ### decrease number of transactions the mempool can store
 
+Default:
+```toml
+# Maximum number of transactions in the mempool
+size = 5000
+```
+
+Suggested: A few blocks of peak traffic
+```toml
+# Maximum number of transactions in the mempool
+size = 200
+```
+
 * from 5000 to a reasonable value i.e. 100 or 200 for now
+* the mempool doesn't really need the ability to store more than a few blocks worth of transactions at peak traffic
 
 ### reduce the size of your chains mempool in bytes
+
+Default:
+```toml
+max_txs_bytes = 1073741824
+```
+
+Suggested: block size * 10
+
+This exadmple uses 2mb blocks, which were tested on the cosmos hub replicated security testnet, and found to be a good value. 
+```
+max_txs_bytes = 20000000
+```
 
 * Tested on Cosmos hub replicated security testnet with help from CryptoCrew and Hypha
 
@@ -85,14 +115,29 @@ weather by [adjusting signed blocks window downwards](https://forum.cosmos.netwo
 ### Validators should enforce a globally consistent gas price using the configuration options for that
 
 * use governance proposals to globally set a gas price, even if that cannot be enforced by x/globalfee, so that validators have a clear picture of what they should set gas prices to, instead of keeping that information unclear as it often is
+* On the cosmos hub today, at minimum, Binance is not enforcing gas prices.  Tbruelle on the forum has more information. 
 
 ### Validators should ensure minimum 1gbps bandwidth and operate from bare metal nvme devices
 
 * In testing on Celestia it was clear that validators with better hardware performed better in testing.  
 
-## Process
+## Issues With Process
 
 This repository, and 8 weeks of continuous work by numerous ecosystem participants, none of whom are compensated by the foundation, was made necessary by years of proceduarl issues that stem from the opaque way of working and culture at [ICFormal](https://interchain.io).  ICFormal team members were directly unhelpful, and referred the issue back to [Amulet](https://twitter.com/amuletdotdev), who saw it fit to publicly publish this.  
+
+* Numerous emails to security@interchain.io recieved no reply
+* Informal seems to control the disclosure process, Amulet is therefore unable to effectively coordinate
+* Scripts provided for reproduction were not used
+* Issue was released against the recommendations of the reporter
+* Reporter asked for calls with Amulet and Informal, recieved no response
+* Report contained inaccurate information about issue
+
+While I cannot recommend reporting via security@interchain.io or HackerOne currently, due to the foundation's broken processes and non-responsiveness, I do recommend that anyone with security issues to report, report thusly:
+
+* Comet: Celestia
+* CosmosSDK: Binary Builders
+* IBC: Interchain GMBH
+* x/wasm: Confio
 
 ## Credits
 
