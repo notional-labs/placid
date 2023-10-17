@@ -1,5 +1,6 @@
 # placid
-mitigations to https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604, which was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io).
+
+mitigations to https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604, which was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io).  The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM triggering".  The security bulletin was posted against the direct and clearly expressed wishes of the Notional team.
 
 
 ## Notes
@@ -17,27 +18,26 @@ https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-00
 * address procedural issues that caused the interchain foundation to bungle these items since 2021
 
 
-
-
-
 ## Mitigations 
+
 these are the mitigations that I intend to ship today at 1400 GMT to the public on Amulet’s forum post, via twitter, and via DM/Telegram/Signal to chain teams in Notional’s Network.  That covers most, but not all of Cosmos.
 
 
 ### Have a block size between 2-5 mb
 
-2mb blocks, not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
-https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb
+[2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
+
 
 
 ### 100 gas per byte
+
 * https://forum.cosmos.network/t/last-call-increase-the-size-of-the-memo-field-to-100kb-and-10x-the-cost-of-bytes/11500/11
 
 
 ### Jail validators faster
 
-weather by adjusting signed blocks window downwards or min_signed_blocks_per_window upwards
-https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1
+weather by [adjusting signed blocks window downwards](https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1) or min_signed_blocks_per_window upwards
+
 
 
 ### lower downtime slash
