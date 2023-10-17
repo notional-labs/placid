@@ -64,16 +64,9 @@ weather by [adjusting signed blocks window downwards](https://forum.cosmos.netwo
 https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10
 
 
-### use a globally consistent version of the mempool
-
-* v1 seemed marginally better than v0
-
-
-
 ### decrease number of transactions the mempool can store
 
 * from 5000 to a reasonable value i.e. 100 or 200 for now
-
 
 
 ### reduce the size of your chains mempool in bytes 
