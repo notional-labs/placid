@@ -1,9 +1,15 @@
 # placid
 
-mitigations to https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604, which was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io).  The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM triggering".  The security bulletin was posted against the direct and clearly expressed wishes of the Notional team.
+mitigations to 
 
 
 ## Notes
+
+[The issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io).  
+
+The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent. 
+
+The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted against the direct and clearly expressed wishes of the Notional team.
 
 https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604 is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  However, it is necessary and safest to trend towards disclosure, so here is that plan:
 
@@ -26,6 +32,17 @@ these are the mitigations that I intend to ship today at 1400 GMT to the public 
 ### Have a block size between 2-5 mb
 
 [2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
+
+### Validators should peer directly with one another
+
+* Don't peer directly with validators you don't trust
+* Every validator should make these decisions for themeselves
+
+* Methods - Configuration
+  * Add other validators node IDs to your unconditional peers
+  * add other validators ID@address to your unconditional peers
+
+* Methods -  
 
 
 
@@ -59,18 +76,39 @@ https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-
 
 ### reduce the size of your chains mempool in bytes 
 
-.  Tested on Cosmos hub replicated security testnet
-Beware of Banana King transactions and consider a mempool filter for them until there is an updated IBC release
-https://x.com/web3_analyst/status/1635687287962112000?s=20
-https://github.com/cosmos/ibc-go/issues/4859
-do not use x/globalfee to allow for gas bypasses
-discontinue usage of x/globalfee
-validators should enforce a globally consistent gas price using the configuration options for that.
-use governance proposals to globally set a gas price, even if that cannot be enforced the way x/globalfee does, so that validators have a clear picture of what they should set gas prices to, instead of keeping that information unclear as it often is
-Validators should ensure minimum 1gbps bandwidth and operate from bare metal nvme devices
+* Tested on Cosmos hub replicated security testnet with help from CryptoCrew and Hypha
+
+
+### Beware of Banana King transactions and consider a mempool filter for them until there is an updated IBC release
+
+  * https://x.com/web3_analyst/status/1635687287962112000?s=20
+  * https://github.com/cosmos/ibc-go/issues/4859
+
+### do not use x/globalfee to for gas bypasses
+
+* gas bypasses are dangerous to smooth operation of a blockchain and should not be used.
+
+
+### discontinue usage of x/globalfee
+
+* no comment
+
+
+### Validators should enforce a globally consistent gas price using the configuration options for that.
+
+* use governance proposals to globally set a gas price, even if that cannot be enforced the way x/globalfee does, so that validators have a clear picture of what they should set gas prices to, instead of keeping that information unclear as it often is
+
+### Validators should ensure minimum 1gbps bandwidth and operate from bare metal nvme devices
+
+* In testing on Celestia it was clear that validators with better hardware performed better in testing.  
 
 
 
+
+
+## Process
+
+This repository, and 8 weeks of continuous work by numerous ecosystem participants, none of whom are compensated by the foundation, was made necessary by years of proceduarl issues that stem from the opaque way of working and culture at [ICFormal](https://interchain.io).  ICFormal team members were directly unhelpful, and referred the issue back to [Amulet](https://twitter.com/amuletdotdev), who saw it fit to publicly publish this.  
 
 
 ## Credits
