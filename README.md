@@ -12,10 +12,8 @@ https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-00
 
 * release short term mitigations, this repository -- https://github.com/notional-labs/placid
 * assist validators and chain teams with the implementation of mitigations
-* continue working like mad to ensure that all ecosystem modules are patched for banana king
 * work at a pace less than 16 hrs per day to ensure that issues in comet are addressed
 * release solid fixes
-* release full documentation on what p2p storms are, and their intersection with banana king
 * address procedural issues that caused the interchain foundation to bungle these items since 2021
 
 
@@ -26,7 +24,8 @@ https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-00
 these are the mitigations that I intend to ship today at 1400 GMT to the public on Amulet’s forum post, via twitter, and via DM/Telegram/Signal to chain teams in Notional’s Network.  That covers most, but not all of Cosmos.
 
 
-#### Have a block size between 2-5 mb
+### Have a block size between 2-5 mb
+
 2mb blocks, not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
 https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb
 
@@ -39,16 +38,21 @@ https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb
 
 weather by adjusting signed blocks window downwards or min_signed_blocks_per_window upwards
 https://forum.cosmos.network/t/adjust-min-signed-per-window-to-80/11808/1
+
+
 ### lower downtime slash
+
 https://forum.cosmos.network/t/eliminate-the-downtime-slash-and-reduce-downtime-jail/11783/10
 
 
 ### use a globally consistent version of the mempool
+
 * v1 seemed marginally better than v0
 
 
 
 ### decrease number of transactions the mempool can store
+
 * from 5000 to a reasonable value i.e. 100 or 200 for now
 
 
@@ -84,8 +88,10 @@ Mitigations and research were worked on by:
   * Lit
 * Cryptocrew
   * Clemens
-# Iqlusion
+* Iqlusion
   * Zaki
+* Cosmos Hub
+  * Jehan
 * Hypha
   * Lexa
   * Udit
@@ -106,6 +112,8 @@ Mitigations and research were worked on by:
   * Callum
 * Binary Builders
   * Marko
+* Skip
+* Range Security
 
 Funding for cosmos hub related portions of this issue has been provided by the cosmos hub community pool via Proposal 104, and the AADAO grant to CryptoCrew.  No meaningful aid was provided by the Interchain Foundation, Amulet, or Informal Systems.
 
