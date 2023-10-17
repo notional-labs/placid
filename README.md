@@ -125,7 +125,9 @@ max_txs_bytes = 20000000
 
 ### Validators should ensure minimum 1gbps bandwidth and operate from bare metal nvme devices
 
-* In testing on Celestia it was clear that validators with better hardware performed better in testing.  
+* In testing on Celestia it was clear that validators with better hardware performed better in testing.
+* A survey of hardware was performed on Celestia
+* Injective has been recommending 5gbps internet connections, and this seems a prudent recommendation for validators. 
 
 ## Issues With Process
 
