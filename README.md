@@ -21,7 +21,7 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 * ~~release short term mitigations, this repository~~
 * assist validators and chain teams with the implementation of mitigations
   * Jacob, Jehan, Zaki, Marko, Dev, the celesita team, Achilleas from Injective, Notional's engineering team have all been helpful and I am sure they'd be glad to lend a hand with improved configurations & mitigation.
-* work at a pace less than 16 hrs per day to ensure that issues in comet are addressed
+* Work on issues with the mempool and block gossip
 * release solid fixes
 * address procedural issues that caused the interchain foundation to bungle these items since 2021
 
@@ -194,4 +194,4 @@ Mitigations and research were worked on by:
 
 Funding for cosmos hub related portions of this issue has been provided by the cosmos hub community pool via Proposal 104, and the AADAO grant to CryptoCrew.  No meaningful aid was provided by the Interchain Foundation, Amulet, or Informal Systems.
 
-The issues mitigated here have been reported by Notional and others to the Interchain Foundation since 2021.
+The issues mitigated here have been reported by Notional and others to the Interchain Foundation since 2021.  This issue occured recently on Stride and that re-started the investigation into its causes.  
