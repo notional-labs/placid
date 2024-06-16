@@ -45,8 +45,6 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 ## Mitigations
 
-these are the mitigations that I intend to ship today at 1400 GMT to the public on Amulet’s forum post, via twitter, and via DM/Telegram/Signal to chain teams in Notional’s Network.  That covers most, but not all of Cosmos.
-
 It is important to note that the mitigations will vary somewhat from chain to chain. 
 
 ### Have a block size of less than 2mb unless you need larger
