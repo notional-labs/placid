@@ -1,12 +1,32 @@
 # placid
 
-mitigations to asa-2023-002, which is part of a larger set of issues reported to ICFormal by notional labs since Sept 21, 2023.
+mitigations to asa-2023-002, which is part of a larger set of issues reported to:
+
+* Interchain Foundation
+* Informal Systems
+* Amulet
+* Strangelove Labs
+
+...and were inaccurately distilled into asa-2023-002 by the above teams.
+
+a testing tool called [hardhat](github.com/somatic-labs/hardhat) has been built and chain teams can use this tooling to test the performance of their chain under load.
 
 ## Notes
 
-The [issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [ICFormal](https://informal.systems/).  
+The [issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io) wifh approval by [Informal Systems](https://informal.systems).
 
-The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime."  Saying anything further would be imprudent, but accuracy matters, and that is accurate.  All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, Injective, Celestia, and TerraForm Labs teams.  
+The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime." 
+
+* RPC downtime was observed on all tested chains
+* Umee had 10% of vote power go down and atay down despite the transactions stopping.
+* Mars protocol did not charge for gas and had 22mb blocks, which allowed hardhat users to
+  * extend block times 10x their normal duration
+  * disrupt ibc
+  * store gigabytes for free, treating the chain like a free hard disk
+
+Initally I thought that Saying anything further would be imprudent, but chain teams have been given materially inaccurate information by the foundation and getting this issue addressed has required testing on mainnets and months of work.  
+
+All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, Injective, Celestia, and TerraForm Labs teams.  Additonally, it has been necessary to vet these findings with Seal911, az it has been proven impossinle to report and discuss these issues with Interchain Foundation funded teams. 
 
 There is not currently any one-size-fits-all solution.
 
@@ -14,7 +34,7 @@ The issue disclosed in Amulet's post is not yet fixed, but there are ways to mit
 
 The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted against the direct and clearly expressed wishes of the Notional team.
 
-[asa-2023-002](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) is badly miscategorized, and should not have bene released publicly before a set of mitigations were made.  It isn't prudent to publicly release details about "amulet-security-advisory-for-cometbft-asa-2023-002" at this time because fixes are not yet in place.  
+[asa-2023-002](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) is badly miscategorized, and its severity goes as high as critical, depending on what the chain in question actually does.
 
 ## Plan
 
