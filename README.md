@@ -38,11 +38,16 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 ## ACHTUNG! THERE ARE SITUATIONS WHERE LOSING LIVENESS IS A CRITICAL SECURITY ISSUE AND THESE HAVE RESULTED IN LOSS OF FUNDS
 
+All incidents have occurrd **after** the initial 2021 report to the interchain foundation, and levana occured **after** the fall 2023 replication of issues on Stride. 
+
 * Oracles
   * Terra
+    * since terra didn't reliably make blocks during the UST death cycle, it is certain that its oracle price feed did not function correctly. 
   * Levana
+    * The "congestion attack" on Osmosis occured as a resulg of these issues.  This was used to harm Levana users by interrupting price updates.
 * Algostables
-  * Terra
+  * Terra - while UST was surely flawed, the chain did not make blocks reliably while the UST death cycle was occuring.
+    * This occured after simiar issues were seen on Sentinel, and reported. 
 
 ## Plan
 
