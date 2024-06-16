@@ -156,63 +156,25 @@ This repository, and 8 weeks of continuous work by numerous ecosystem participan
 
 * Numerous emails to security@interchain.io recieved no reply
 * Informal seems to control the disclosure process, Amulet is therefore unable to effectively coordinate
-* Scripts provided for reproduction were not used
+* Scripts provided for reproduction were not actually run -- if they had been, these issues would have been seen very clearly
 * Issue was released against the recommendations of the reporter
 * Reporter asked for calls with Amulet and Informal, recieved no response
 * Report contained inaccurate information about issue
 
 While I cannot recommend reporting via security@interchain.io or HackerOne currently, due to the foundation's broken processes and non-responsiveness, I do recommend that anyone with security issues to report, report thusly:
 
+* Anything: Osmosis
 * Comet: Celestia
 * CosmosSDK: Binary Builders
 * IBC: Interchain GMBH
 * x/wasm: Confio
 
-## Credits
 
-Mitigations and research were worked on by:
 
-* Notional
-  * Jacob
-  * Khanh
-  * Joe
-  * Robin
-  * Du
-  * Vuong
-  * Sheldon Dearr
-  * Lit
-* Cryptocrew
-  * Clemens
-* [ctrl_felix](x.com/ctrl_felix)
-* [coldchain](x.com/getcoldy)
-* Iqlusion
-  * Zaki
-* Cosmos Hub
-  * Jehan
-  * Milan
-* Hypha
-  * Lexa
-  * Udit
-  * Dante
-  * Denise
-* Terraform Labs
-  * Emi
-* Osmosis
-  * Dev
-* Secret Network
-  * Assaf
-* Injective
-  * Achilleas
-* Celestia
-  * Ismail
-  * Luka
-  * Eric
-  * Callum
-* Binary Builders
-  * Marko
-* Skip
-* Range Security
+## Funding
 
-Funding for cosmos hub related portions of this issue has been provided by the cosmos hub community pool via Proposal 104, and the AADAO grant to CryptoCrew.  No meaningful aid was provided by the Interchain Foundation, Amulet, or Informal Systems.
+for cosmos hub related portions of this issue has been provided by the cosmos hub community pool via Proposal 104, and the AADAO grant to CryptoCrew.  No meaningful aid was provided by the Interchain Foundation, Amulet, or Informal Systems.
+
+This work has been entirely unfunded since the termination of cosmos hub proposal 104. 
 
 The issues mitigated here have been reported by Notional and others to the Interchain Foundation since 2021.  This issue occured recently on Stride and that re-started the investigation into its causes.  
