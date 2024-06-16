@@ -38,7 +38,6 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 ## Plan
 
-* ~~release short term mitigations, this repository~~
 * assist validators and chain teams with the implementation of mitigations
 * Work on issues with the mempool and block gossip
 * release solid fixes
