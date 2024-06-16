@@ -20,7 +20,6 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 * ~~release short term mitigations, this repository~~
 * assist validators and chain teams with the implementation of mitigations
-  * Jacob, Jehan, Zaki, Marko, Dev, the celesita team, Achilleas from Injective, Notional's engineering team have all been helpful and I am sure they'd be glad to lend a hand with improved configurations & mitigation.
 * Work on issues with the mempool and block gossip
 * release solid fixes
 * address procedural issues that caused the interchain foundation to bungle these items since 2021
@@ -36,7 +35,7 @@ It is important to note that the mitigations will vary somewhat from chain to ch
 [2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
 
 * This finding is validated by testing on the cosmos hub replicated security testnet performed by Notional, CryptoCrew, and Hypha.
-* Chains using x/wasm should not reduce block size below 3.1MB
+
 
 ### Validators should peer directly with one another
 
@@ -83,11 +82,12 @@ size = 5000
 Suggested: A few blocks of peak traffic
 ```toml
 # Maximum number of transactions in the mempool
-size = 200
+size = 1000
 ```
 
-* from 5000 to a reasonable value i.e. 100 or 200 for now
-* the mempool doesn't really need the ability to store more than a few blocks worth of transactions at peak traffic
+* from 5000 to a reasonable value i.e. 1000 or less for now
+* if you need more for some reason, do please note that normal transactions are really, really small compared to abuse transactions (1/100th or less in most cases)... so, make sure to reduce mempool size **in bytes** as that is more impactful in resolving these issues  
+* the mempool doesn't really need the ability to store more than a few blocks worth of transactions at peak traffic.
 
 ### reduce the size of your chains mempool in bytes
 
@@ -104,8 +104,9 @@ max_txs_bytes = 20000000
 ```
 
 * Tested on Cosmos hub replicated security testnet with help from CryptoCrew and Hypha
+* Should make the issue less impactful as a smaller mempool will not trigger issues wifh recheck
 
-### Beware of Banana King transactions and consider a mempool filter for them until there is an updated IBC release
+### Beware of Banana King transactions and upgrade to ibc v8 asap
 
 * [Banana King's Coming Out Party](https://x.com/web3_analyst/status/1635687287962112000?s=20)
 * [Banana King's Fix](https://github.com/cosmos/ibc-go/issues/4859)
