@@ -26,7 +26,7 @@ The issue disclosed in Amulet's post affects every chain using CometBFT and is a
 
 Initally I thought that Saying anything further would be imprudent, but chain teams have been given materially inaccurate information by the foundation and getting this issue addressed has required testing on mainnets and months of work.  
 
-All of these assertions have been tested by q combination of the Notional, Hypha, CryptoCrew, Injective, Celestia, and TerraForm Labs teams.  Additonally, it has been necessary to vet these findings with Seal911, az it has been proven impossinle to report and discuss these issues with Interchain Foundation funded teams. 
+It has been necessary to vet these findings with Seal911, az it has been proven impossible to report and discuss these issues with Interchain Foundation funded teams. 
 
 There is not currently any one-size-fits-all solution.
 
