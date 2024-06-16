@@ -36,6 +36,11 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 
 [asa-2023-002](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) is badly miscategorized, and its severity goes as high as critical, depending on what the chain in question actually does.
 
+## ACHTUNG! THERE ARE SITUATIONS WHERE LOSING LIVENESS IS A CRITICAL SECURITY ISSUE AND THESE HAVE RESULTED IN LOSS OF FUNDS
+
+* Oracles
+* Algostables
+
 ## Plan
 
 * assist validators and chain teams with the implementation of mitigations
