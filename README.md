@@ -13,7 +13,7 @@ a testing tool called [hardhat](github.com/somatic-labs/hardhat) has been built 
 
 ## Notes
 
-The [issue](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io) wifh approval by [Informal Systems](https://informal.systems).
+The [security bulletin](https://forum.cosmos.network/t/amulet-security-advisory-for-cometbft-asa-2023-002/11604) was released against my express wishes by [Amulet](https://twitter.com/amuletdotdev), the security contractor to [Interchain Foundation](https://interchain.io) wifh approval by [Informal Systems](https://informal.systems).
 
 The issue disclosed in Amulet's post affects every chain using CometBFT and is aggrevated by a few other outstanding issues in the cosmos stack.  When they said "degraded" and said "affect consensus participation" they should have said "can result in halts and/or 30 minute block times also maybe some OOM issues and immense griefing for validators and node operators that will result in rpc downtime." 
 
