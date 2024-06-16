@@ -39,7 +39,11 @@ The security bulletin from [Amulet](https://twitter.com/amuletdotdev) was posted
 ## ACHTUNG! THERE ARE SITUATIONS WHERE LOSING LIVENESS IS A CRITICAL SECURITY ISSUE AND THESE HAVE RESULTED IN LOSS OF FUNDS
 
 * Oracles
+  * Terra
+  * Levana
 * Algostables
+  * Terra
+* 
 
 ## Plan
 
