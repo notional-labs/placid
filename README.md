@@ -1,6 +1,6 @@
 # placid
 
-mitigations to asa-2023-002, which is part of a larger set of issues reported to:
+mitigations to asa-2023-002, which is part of a larger set of **provably critical** issues reported to:
 
 * Interchain Foundation
 * Informal Systems
