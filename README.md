@@ -24,7 +24,7 @@ The issue disclosed in Amulet's post affects every chain using CometBFT and is a
   * disrupt ibc
   * store gigabytes for free, treating the chain like a free hard disk
 
-Initally I thought that Saying anything further would be imprudent, but chain teams have been given materially inaccurate information by the foundation and getting this issue addressed has required testing on mainnets and months of work.  
+Chain teams have been given materially inaccurate information by the foundation and getting this issue addressed has required testing on mainnets and months of work.  
 
 It has been necessary to vet these findings with Seal911, az it has been proven impossible to report and discuss these issues with Interchain Foundation funded teams. 
 
