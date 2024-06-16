@@ -50,12 +50,9 @@ these are the mitigations that I intend to ship today at 1400 GMT to the public 
 
 It is important to note that the mitigations will vary somewhat from chain to chain. 
 
-### Have a block size between 2-5 mb
+### Have a block size of less than 2mb unless you need larger
 
-[2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb.
-
-* This finding is validated by testing on the cosmos hub replicated security testnet performed by Notional, CryptoCrew, and Hypha.
-
+[2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb, especially if your application is time sensitive, for example, handling liquidations on ibc counterparties. 
 
 ### Validators should peer directly with one another
 
@@ -77,6 +74,10 @@ It is important to note that the mitigations will vary somewhat from chain to ch
 Raising the price of bytes will ensure that exploiting
 
 * [Cosmos Hub Example](https://forum.cosmos.network/t/last-call-increase-the-size-of-the-memo-field-to-100kb-and-10x-the-cost-of-bytes/11500/11)
+
+### Validators should not perform indexing
+
+Banana king transactions break indexing up and down the stack and **may** be responsible for cases where validators experience oom issues. 
 
 ### Jail validators faster
 
