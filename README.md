@@ -150,10 +150,10 @@ max_txs_bytes = 20000000
 
 ## Issues With Process
 
-This repository, and 8 weeks of continuous work by numerous ecosystem participants, none of whom are compensated by the foundation, was made necessary by years of proceduarl issues that stem from the opaque way of working and culture at [ICFormal](https://interchain.io).  ICFormal team members were directly unhelpful, and referred the issue back to [Amulet](https://twitter.com/amuletdotdev), who saw it fit to publicly publish this.  
+This repository, and 8 weeks of continuous work by numerous ecosystem participants, none of whom are compensated by the foundation, was made necessary by years of proceduarl issues that stem from the opaque way of working and culture at [Interchain Foundation](https://interchain.io).  Interchain Foundation funded teams were directly unhelpful, and ultimately directly hostile to this work.  In retribution for continuing this work, my entire company has been removed from the #cosmos-tech slack channel.   
 
 * Numerous emails to security@interchain.io recieved no reply
-* Informal seems to control the disclosure process, Amulet is therefore unable to effectively coordinate
+* Informal seems to control the disclosure process for comdt issues.... I think.  But as a reporter it seemed to me that the only coordinated thing was hostility.
 * Scripts provided for reproduction were not actually run -- if they had been, these issues would have been seen very clearly
 * Issue was released against the recommendations of the reporter
 * Reporter asked for calls with Amulet and Informal, recieved no response
@@ -161,13 +161,13 @@ This repository, and 8 weeks of continuous work by numerous ecosystem participan
 
 While I cannot recommend reporting via security@interchain.io or HackerOne currently, due to the foundation's broken processes and non-responsiveness, I do recommend that anyone with security issues to report, report thusly:
 
-* Anything: Osmosis
+* Any issue in Cosmos: Osmosis
 * Comet: Celestia
 * CosmosSDK: Binary Builders
 * IBC: Interchain GMBH
 * x/wasm: Confio
 
-
+I cannot in good conscience recommend reportin anything via amulet.
 
 ## Funding
 
