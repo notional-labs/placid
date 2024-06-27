@@ -62,7 +62,7 @@ It is important to note that the mitigations will vary somewhat from chain to ch
 
 ### Have a block size of less than 2mb unless you need larger
 
-[2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not smaller, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb, especially if your application is time sensitive, for example, handling liquidations on ibc counterparties. 
+[2mb blocks](https://forum.cosmos.network/t/increase-maxblocksize-from-200k-to-2mb), not larger, and be mindful of contract upload sizes for your chain, which may require larger blocks.  Don’t set block size to more than 5mb, especially if your application is time sensitive, for example, handling liquidations on ibc counterparties. 
 
 ### Validators should peer directly with one another
 
